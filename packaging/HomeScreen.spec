@@ -6,7 +6,7 @@ Group:      Applications/System
 License:    Apache 2.0
 URL:        http://www.tizen.org
 Source0:    %{name}-%{version}.tar.bz2
-BuildRequires:  common-apps
+BuildRequires:  openivi-common-apps
 BuildRequires:  zip
 BuildRequires:  desktop-file-utils
 Requires: pkgmgr
@@ -41,18 +41,17 @@ install -m 0755 app_install.sh %{?buildroot}/home/app/
 ln -sf %{_unitdir_user}/DNA_Homescreen-launchpad-ready.path %{?buildroot}%{_unitdir_user}/tizen-user-middleware.target.wants/
 
 %post
-su app -c "pkgcmd -i -t wgt -p /opt/usr/apps/.preinstallWidgets/JLRPOCX001.HomeScreen.wgt -q"
+su app -c "pkgcmd -i -t wgt -p /opt/usr/apps/.preinstallWidgets/OpenIVI.HomeScreen.wgt -q"
 
 %postun
-su app -c "pkgcmd -u -n JLRPOCX001 -q"
+su app -c "pkgcmd -u -n OpenIVI -q"
 
 %files
 %defattr(-,root,root,-)
-/opt/usr/apps/.preinstallWidgets/JLRPOCX001.HomeScreen.wgt
+/opt/usr/apps/.preinstallWidgets/OpenIVI.HomeScreen.wgt
 /home/app/app_install.sh
 #/home/app/weston-genivi.ini
 %{_bindir}/DNA_launcher.sh
 %{_unitdir_user}/DNA_Homescreen-launchpad-ready.path
 %{_unitdir_user}/tizen-user-middleware.target.wants/DNA_Homescreen-launchpad-ready.path
 %{_unitdir_user}/DNA_Homescreen.service
-

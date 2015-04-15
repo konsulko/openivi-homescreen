@@ -8,5 +8,5 @@ function go(){
 	echo -ne $STR
 	app_launcher -s $STR
 }
-STR="JLRPOCX001.HomeScreen";go;sleep 4
+STR="OpenIVI.HomeScreen";go;sleep 4
 pkle

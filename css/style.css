@@ -1,14 +1,14 @@
 html, body, iframe  {
 	/*margin:0;
-	padding:0; *******this style in common.css*******/ 
+	padding:0; *******this style in common.css*******/
 	background-color:black;
 	border:0;
 	outline:0;
 	font-size:100%;
 	vertical-align:baseline;
-}                  
+}
 body{
-	/*font-family: "Droid Sans", sans-serif; *******this style in common.css*******/ 
+	/*font-family: "Droid Sans", sans-serif; *******this style in common.css*******/
 	background-color:black;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -18,10 +18,10 @@ body{
 	user-select: none;
 	display: flex;
     margin: 0px auto;
-	height:1920px !important;
-	width:1080px !important;
+	height:600px !important;
+	width:1024px !important;
 	overflow:hidden;
-} 
+}
 
 body, select, input, textarea {   color: #444; }
 
@@ -106,7 +106,7 @@ html,
 }
 #controls
 {
-	position:fixed;	
+	position:fixed;
 	background-color:#EEEEEE;
 	border: 1px solid #E1E0AF;
 	-webkit-border-radius: 6px;
@@ -117,7 +117,7 @@ html,
 	float:left;
 	clear:both;
 }
-#controls .slider 
+#controls .slider
 {
 	float:none;
 	margin-left: auto;
@@ -168,9 +168,9 @@ html,
 	padding: 0 0 15px 5px;
 }
 #helpInfo {
-	width:250px; 
-	position:absolute; 
-	left: 10px; 
+	width:250px;
+	position:absolute;
+	left: 10px;
 	top: 0;
 	background: none repeat scroll 0 0 #FFFECF;
 	border: 1px solid;

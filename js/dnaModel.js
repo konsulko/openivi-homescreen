@@ -13,8 +13,8 @@ function reqListener(e){
 
 //Definitions
 var ScreenScale=1.5;
-	ScreenWidth = 720*ScreenScale,
-	ScreenHeight = 1280*ScreenScale, /*1920 or 1800, 1220 for testing*/
+	ScreenWidth = 1024*ScreenScale,
+	ScreenHeight = 600*ScreenScale, /*1920 or 1800, 1220 for testing*/
 	VerticalOffset = -250, /*-250, or +250 for testing */
 	ClickSensitivity = 50,
 	DragSensitivity = 50,
