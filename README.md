@@ -1,4 +1,4 @@
-Copyright (c) 2014, Intel Corporation, Jaguar Land Rover
+Copyright (c) 2014, Intel Corporation, Jaguar Land Rover, Konsulko Group
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

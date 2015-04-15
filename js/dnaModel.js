@@ -12,9 +12,9 @@ function reqListener(e){
 }
 
 //Definitions
-var ScreenScale=1.5;
+var ScreenScale=1;
 	ScreenWidth = 1024*ScreenScale,
-	ScreenHeight = 600*ScreenScale, /*1920 or 1800, 1220 for testing*/
+	ScreenHeight = 600*ScreenScale, /*1920, 600 or 1800, 1220 or 380 for testing*/
 	VerticalOffset = -250, /*-250, or +250 for testing */
 	ClickSensitivity = 50,
 	DragSensitivity = 50,
@@ -49,9 +49,9 @@ var ScreenScale=1.5;
 	TwistHeight = -40,
 	Setting=[],
 	ClickableDistance = 0.0; //(1.0 to -1.0) Larger numbers allow farther icon clicks
-	
+
 	/* === === === === === */
-	
+
 var MinRungCount = 6,
 	MaxRungCount = 10,
 	MinStrandCount = 2,
@@ -60,7 +60,7 @@ var MinRungCount = 6,
 	RungCount=10;
 
 	/* === === === === === */
-	
+
 	//RungCount: Number of rungs to display (4-360)
 	//Change to constant 41 or 81 when vertical scrolling is complete?
 
@@ -213,7 +213,7 @@ DNA.prototype = {
 			}else{
 				queueLine(a,G.X[i],G.Y[i],this.x,this.y,str[i]);
 			}
-			
+
 			if(Edges){
 
 				//Todo: Draw closer side last!
@@ -233,7 +233,7 @@ DNA.prototype = {
 			//Keep track of last rung position
 			G.LastX[i]=G.X[i];
 			G.LastY[i]=G.Y[i];
-		
+
 		// */
 		}
 		G.LastCos=G.Strand[0];
@@ -264,11 +264,11 @@ DNA.prototype = {
 			G.HexScale[i]=NucleotideSize;
 			G.IconScale[i]=IconSize;
 			G.Num[i]=Count*StrandCount-StrandCount+i;
-			
+
 			G.Icon=G.Num[i]-Buffer;
 			while(G.Icon>=IconLinks.length)
 				G.Icon=G.Icon-IconLinks.length;
-			
+
 			//If strand is within buffered zone
 			var StrandLength = StrandCount*RungCount;
 			if(G.Num[i] >= Buffer && G.Num[i] < StrandLength-Buffer){
@@ -282,10 +282,10 @@ DNA.prototype = {
 						G.HexScale[i]=rescale(G.HexScale[i],G.Strand[i]);
 						G.IconScale[i]=rescale(G.IconScale[i],G.Strand[i]);
 					}
-					
+
 					//Create model for nucleotide icons
 					buildStrand(G.Num[i],G.X[i],G.Y[i],G.HexScale[i],G.Strand[i],IconLinks[G.Icon][1]);
-					
+
 					//Add images to queue
 					placeImage(a, G.Strand[i], document.getElementById('nucleotide'), G.X[i],G.Y[i],G.HexScale[i], 1);
 					placeImage(a, G.Strand[i], SideImg[i], G.X[i],G.Y[i],G.IconScale[i],0,1);
@@ -384,7 +384,7 @@ Spinner.prototype = {
             d.paintIcons(this.offset);
         }
 		unqueue(b.Context);
-		
+
 		if(G.Mousedown){
 			//Keep track of how long screen is touched
 			G.Timer=G.Timer+1;
@@ -420,7 +420,7 @@ Spinner.prototype = {
 			//Reset the timer
 			G.Timer=0;
 		}
-		
+
 		//Visual Debugging Indicator Lights
 		//if(G.ClickedTooLong) drawLine(context,10,10,20,20,"Red");
 		//else drawLine(context,10,10,20,20,"Green");
@@ -428,7 +428,7 @@ Spinner.prototype = {
 		//else drawLine(context,10,30,20,40,"Green");
 
 		initDrag();
-		
+
 		//A click has been registered
 		if(G.Mouseclick){
 			for(var i in G.HotZone){
@@ -463,7 +463,7 @@ function queueImage(img, x, y, scalex, scaley, cos){
 function unqueue(Canvas){
 	//Sort on G.Q[i]["o"]
 	G.Q.sort(function (a,b) { return a.o - b.o; });
-	
+
 	for(i=G.Q.length;i>0;i--){
 		if(typeof(G.Q[i])!== typeof undefined){
 			if(G.Q[i]["t"]==0)
@@ -498,7 +498,7 @@ function drawLine(a,x1,y1,x2,y2,color, color2){
 		a.stroke();
 		a.closePath();
 	}
-	
+
 	dist=getDistance(x1,y1,x2,y2);
 	ang=getAngle(x1,y1,x2,y2)-AnimationHeight/32; //angles were misbehaving, and Math.floor made them wibbly
 
@@ -549,7 +549,7 @@ function placeImage(canvas, cosine, img, x, y, scale, force, override){
 	if(Flipping) scalex=Math.abs(cosine)*scalex;
 	if(HideBacks && !force) scalex=(cosine > 0 ? 0 : 1)*scalex;
 	scaley=scale;
-	
+
 	//canvas.drawImage(img,x-(scalex/2),y-(scaley/2),scalex,scaley);
 	cosine=cosine-override; //used for culling images properly
 	queueImage(img, x-(scalex/2), y-(scaley/2), scalex, scaley, cosine);
@@ -705,7 +705,7 @@ function onAppRecallSuccess(list) {
 	try {
 		index = 0;
 		var applications = [];
-		
+
 		list.sort(function (x, y) {
 			return x.appName > y.appName ? 1 : -1;
 		});
@@ -788,7 +788,7 @@ getInstalledApps(function (){
 	Twist = 360 / RungCount,
 	TwistHeight = -40,
 	Width = ScreenWidth*WidthMultiplier;
-	
+
 	Setting=[null,RungSpacing,Twist,TwistHeight,Speed,VerticalOffset,Width];
 
 	initListeners();
