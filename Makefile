@@ -1,4 +1,4 @@
-PROJECT = OpenIVI.HomeScreen
+PROJECT = OPENIVI001.HomeScreen
 INSTALL_FILES = images js icon.png index.html
 WRT_FILES = DNA_common css icon.png index.html setup config.xml images js manifest.json README.md
 VERSION := 0.0.1
