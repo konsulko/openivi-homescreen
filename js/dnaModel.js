@@ -366,6 +366,12 @@ Spinner.prototype = {
     frameAction: function (b) {
 		//redraw canvas
         b.canvas.width = b.canvas.width;
+
+	//Work around due to the bug with blue instead of transparent background
+	b.Context.fillStyle="#000000";
+	b.Context.fillRect(0,0,b.canvas.width,b.canvas.height);
+
+
 		if(ShowFPS)
 			fpsUpdate();
 		//butt,round,square

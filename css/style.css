@@ -41,6 +41,7 @@ html,
 #overlay {
 	color:#FFFFFF;
 	font-weight:bold;
+	z-index: 100;
 }
 
 #home-stats {
