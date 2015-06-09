@@ -732,7 +732,7 @@ function onAppRecallSuccess(list) {
 						addIcon(app.name, null, registeredApps[app.id], app.id);
 					}else{
 						if(app.iconPath.substr(app.iconPath.length - 4) != ".png"){
-							var path="./DNA_common/images/tizen_inactive.png";
+							var path="./DNA_common/images/tizen.png";
 						}else{
 							var path=app.iconPath;
 						}
