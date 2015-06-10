@@ -750,7 +750,7 @@ function getInstalledApps(callback){
 	G.Callback = callback;
 	//Add defaults until app pulls icons properly
 	/*for(i=0;i<SkipRows*StrandCount;i++){
-		addIcon('Dashboard',	function (){ callApp("JLRPOCX033.Dashboard");			});
+		addIcon('Dashboard',	function (){ callApp("OPENIVI033.Dashboard");			});
 	}*/
 	"use strict";
 	if (typeof tizen !== 'undefined') {
@@ -769,11 +769,11 @@ function getInstalledApps(callback){
 	}else{
 		//Add some defaults for the Web Simulator
 		//addIcon syntax: Image Name, Callback Function
-		addIcon('dashboard_inactive',	function (){ callApp("JLRPOCX033.Dashboard");			});
-		addIcon('fingerprint_inactive',	function (){ callApp("JLRPOCX011.FingerPrint");		});
-		addIcon('hvac_inactive',		function (){ callApp("JLRPOCX008.HVAC");				});
-		addIcon('news_inactive',		function (){ callApp("JLRPOCX007.News");				});
-		addIcon('phone_inactive',		function (){ callApp("JLRPOCX031.phone");				});
+		addIcon('dashboard_inactive',	function (){ callApp("OPENIVI033.Dashboard");			});
+		addIcon('fingerprint_inactive',	function (){ callApp("OPENIVI011.FingerPrint");		});
+		addIcon('hvac_inactive',		function (){ callApp("OPENIVI008.HVAC");				});
+		addIcon('news_inactive',		function (){ callApp("OPENIVI007.News");				});
+		addIcon('phone_inactive',		function (){ callApp("OPENIVI031.phone");				});
 		//IconCount=30; //for testing purposes
 		callback();
 	}

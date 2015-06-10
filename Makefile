@@ -70,7 +70,7 @@ boxcheck: tizen-release
 
 install_obs:
 	mkdir -p ${DESTDIR}/opt/usr/apps/.preinstallWidgets
-	cp -r JLRPOCX00.HomeScreen.wgt ${DESTDIR}/opt/usr/apps/.preinstallWidgets/
+	cp -r OPENIVI00.HomeScreen.wgt ${DESTDIR}/opt/usr/apps/.preinstallWidgets/
 
 common: /opt/usr/apps/openivi-common-apps
 	cp -r /opt/usr/apps/openivi-common-apps DNA_common
