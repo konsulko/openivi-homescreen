@@ -86,4 +86,4 @@ dev-common: ../openivi-common-app
 ../openivi-common-app:
 	#@echo "Please checkout Common Assets"
 	#exit 1
-	git clone  git@github.com:konsulko/openivi-common-app.git ../openivi-common-app
+	git clone https://github.com/konsulko/openivi-common-app.git ../openivi-common-app
