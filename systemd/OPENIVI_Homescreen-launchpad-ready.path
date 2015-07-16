@@ -1,0 +1,8 @@
+# Description=Path activation for OPENIVI_Homescreen
+
+[Path]
+PathExists=%t/wayland-0
+Unit=OPENIVI_Homescreen.service
+
+[Install]
+WantedBy=multi-user.target
