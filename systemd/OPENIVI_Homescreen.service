@@ -1,12 +1,12 @@
 [Unit]
 Description=Open IVI Homescreen
-After=systemd-user-sessions.service systemd-logind.service tlm.service display-manager-run.service
+After=graphical.target multi-user.target display-manager-run.service
 Requires=dbus.socket
 
 [Service]
 Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/dbus/user_bus_socket
 User=openivi
-ExecStartPre=/bin/sleep 10
+ExecStartPre=/bin/sleep 1
 ExecStart=/usr/bin/OPENIVI_launcher.sh
 
 [Install]
