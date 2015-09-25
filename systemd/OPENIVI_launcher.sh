@@ -10,3 +10,5 @@ function go(){
 }
 STR="OPENIVI001.HomeScreen";go;sleep 4
 pkle
+#Normal process termination no matter pkill result
+exit 0
